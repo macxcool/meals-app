@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styles.css">
+   <title>Dinner Planning</title>
+</head>
+<body class="bg-dark">
+   <div class="container">
+      <div class="row justify-content-center g-0" id="title">
+         <div class="col-lg-12 col-xl-9 text-center bg-light">
+            <h1 class="pt-2">Dinner Planning</h1>
+            <button class="btn btn-outline-primary btn-sm">Show All</button>
+            <hr>
+         </div>
+      </div>
+      <div class="row justify-content-center g-0">
+         <div class="col-lg-8 col-xl-6 bg-light" id="mealsList">
+            <div class="text-center">
+               <button class="btn btn-outline-primary btn-sm mb-3">Add New</button>
+            </div>
+            
+            <!-- Meal cards filled in by Javascript later -->
+            
+         </div>
+         <div class="col-lg-4 col-xl-3 bg-light" id="leftoversCol">
+            <!-- <div class="card bg-light border-end-0 border-top-0 border-bottom-0 px-3 sticky-top" id="leftovers">
+               <div class="card-body">
+                  <h5 class="card-title">In-Fridge Leftovers</h5>
+                  <p class="card-text">
+                     - Spaghetti sauce x3
+                  </p>
+                  <div>
+                     <button class="btn btn-outline-primary btn-sm mt-2">Edit</button>
+                  </div>
+               </div>
+            </div> -->
+         </div>
+      </div>
+   </div>
+
+   <script src="js/dayjs/dayjs.min.js"></script>
+   <script src="js/dayjs/plugin/customParseFormat.js"></script>
+   <script>dayjs.extend(window.dayjs_plugin_customParseFormat)</script>
+   <script src="js/data.js"></script>
+   <script src="js/storage.js"></script>
+   <script src="js/state.js"></script>
+   <script src="js/ui.js"></script>
+   <script src="js/app.js"></script>
+</body>
+</html>
