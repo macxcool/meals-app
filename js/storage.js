@@ -1,11 +1,11 @@
 class Storage {
    constructor() {
       this.baseURL = 'https://api.jsonstorage.net/v1/json/';
-      this.id = '23777c25-a959-4679-bf84-674ff7e0cd79';
-      this.mealsID = '123ab060-9075-473f-a2d1-b9aec11b555e';
-      this.key = '4d204f15-59fb-4221-b320-575c09384940';
+      this.id = JSON_STORAGE_ID;
+      this.mealsID = JSON_MEALS_ID;
+      this.key = JSON_API_KEY;
       this.mealsURL = this.baseURL + '/' + this.id + '/' + this.mealsID + '?apiKey=' + this.key;
-      this.loID = 'c5acce59-cda0-4411-a0e2-68ab787aafeb';
+      this.loID = JSON_LEFTOVERS_ID;
       this.loURL = this.baseURL + '/' + this.id + '/' + this.loID + '?apiKey=' + this.key;
    }
    
