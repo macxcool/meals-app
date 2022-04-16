@@ -1,8 +1,9 @@
 class Data {
    constructor() {
-      this.location = 'data.json';
    }
 
+   // Get meal data from jsonstorage API and add to global variable
+   // Output: array
    getMeals() {
       const mealsData = storage.loadDataFromAPI();
       
@@ -11,6 +12,8 @@ class Data {
       return allMeals;
    }
 
+   // Get Leftovers data from API and set global variable
+   // Output: array
    getLeftovers() {
       const loData = storage.loadLODataFromAPI()
 
@@ -19,6 +22,8 @@ class Data {
       return leftovers;
    }
 
+   // Get text from allMeals array based on date
+   // Input: date string, Output: string
    getEditText(mealID) {
       let mealText = '';
       if(mealID == 'leftovers') {
@@ -35,6 +40,8 @@ class Data {
       }
    }
 
+   // Get text to display in card para
+   // Input: date string, Output: html-format string
    getDisplayText(mealID) {
       let mealText = '';
       if(mealID == 'leftovers') {
@@ -51,6 +58,8 @@ class Data {
       return mealText;
    }
 
+   // Finds last date in allMeals and generates next day's date
+   // Output: date string
    getNextMealID() {
       // get the last date (mealID) from the array
       const lastMealID = allMeals[allMeals.length - 1].date;
@@ -64,10 +73,9 @@ class Data {
       return nextMealID;
    }
 
-   newMeal($date, $data) {
-
-   }
-
+   // Changes html text to text formatted for json storage, replaces data
+   // (or adds it) to allMeals, then calls Save
+   // Input: date string, html-format string
    saveMeal(mealID, text) {
       // find leading spaces and replace with tab
       let mealText = text.replace(/(\n)\s+(-)/g, "$1\t$2");
@@ -89,6 +97,8 @@ class Data {
       this.saveAllMeals(allMeals);
    }
 
+   // Takes allMeals array and sends it off to storage to save
+   // Input: array
    saveAllMeals(allMeals) {
       // check for old data and clean it up
       // get a Date string for today
@@ -105,6 +115,8 @@ class Data {
       storage.saveDataToAPI(allMeals);
    }
 
+   // Formats leftovers text for json storage and send it to storage
+   // Input: html-format text
    saveLeftovers(text) {
       // find leading spaces and replace with tab
       let loText = text.replace(/(\n)\s+(-)/g, "$1\t$2");
@@ -112,13 +124,5 @@ class Data {
       leftovers.leftovers = loText;
 
       storage.saveLODataToAPI();
-   }
-
-   deleteMeal($date) {
-
-   }
-
-   cleanUpOldData() {
-
    }
 }

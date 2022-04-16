@@ -1,5 +1,6 @@
 class Storage {
    constructor() {
+      // Get IDs from global variables in env.js and compile into URLs
       this.baseURL = 'https://api.jsonstorage.net/v1/json/';
       this.id = JSON_STORAGE_ID;
       this.mealsID = JSON_MEALS_ID;
@@ -10,6 +11,9 @@ class Storage {
    }
    
    // these functions are for the main 'meals' data
+
+   // Load Meals data from jsonstorage API
+   // Output: JSON object
    loadDataFromAPI() {
       const xmlHttp = new XMLHttpRequest();
 
@@ -23,6 +27,8 @@ class Storage {
       return mealsData;
    }
 
+   // Save allMeals to API
+   // Input: array
    saveDataToAPI(allMeals) {
       const xmlHttp = new XMLHttpRequest();
 
@@ -41,6 +47,9 @@ class Storage {
    }
 
    // these functions are for the leftovers data
+
+   // Get Leftovers data from API
+   // Output: JSON array
    loadLODataFromAPI() {
       const xmlHttp = new XMLHttpRequest();
 
@@ -54,6 +63,7 @@ class Storage {
       return loData;
    }
 
+   // Save leftovers data back to API
    saveLODataToAPI() {
       const xmlHttp = new XMLHttpRequest();
 
