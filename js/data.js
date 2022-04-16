@@ -5,7 +5,7 @@ class Data {
    // Get meal data from jsonstorage API and add to global variable
    // Output: array
    getMeals() {
-      const mealsData = storage.loadDataFromAPI();
+      const mealsData = storage.loadMealsDataFromAPI();
       
       window.allMeals = mealsData;
 
@@ -15,7 +15,7 @@ class Data {
    // Get Leftovers data from API and set global variable
    // Output: array
    getLeftovers() {
-      const loData = storage.loadLODataFromAPI()
+      const loData = storage.loadLeftoversDataFromAPI()
 
       window.leftovers = loData;
       
@@ -112,7 +112,7 @@ class Data {
          }
       } */
       
-      storage.saveDataToAPI(allMeals);
+      storage.saveMealsDataToAPI(allMeals);
    }
 
    // Formats leftovers text for json storage and send it to storage
@@ -123,6 +123,6 @@ class Data {
       
       leftovers.leftovers = loText;
 
-      storage.saveLODataToAPI();
+      storage.saveLeftoversDataToAPI();
    }
 }

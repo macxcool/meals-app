@@ -14,7 +14,7 @@ class Storage {
 
    // Load Meals data from jsonstorage API
    // Output: JSON object
-   loadDataFromAPI() {
+   loadMealsDataFromAPI() {
       const xmlHttp = new XMLHttpRequest();
 
       xmlHttp.open('GET', this.mealsURL, false);
@@ -29,7 +29,7 @@ class Storage {
 
    // Save allMeals to API
    // Input: array
-   saveDataToAPI(allMeals) {
+   saveMealsDataToAPI(allMeals) {
       const xmlHttp = new XMLHttpRequest();
 
       xmlHttp.open('PUT', this.mealsURL, true);
@@ -50,7 +50,7 @@ class Storage {
 
    // Get Leftovers data from API
    // Output: JSON array
-   loadLODataFromAPI() {
+   loadLeftoversDataFromAPI() {
       const xmlHttp = new XMLHttpRequest();
 
       xmlHttp.open('GET', this.loURL, false);
@@ -64,7 +64,7 @@ class Storage {
    }
 
    // Save leftovers data back to API
-   saveLODataToAPI() {
+   saveLeftoversDataToAPI() {
       const xmlHttp = new XMLHttpRequest();
 
       xmlHttp.open('PUT', this.loURL, true);
