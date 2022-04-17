@@ -1,12 +1,14 @@
+const env = new Env()
+
 class Storage {
    constructor() {
       // Get IDs from global variables in env.js and compile into URLs
       this.baseURL = 'https://api.jsonstorage.net/v1/json/';
-      this.id = JSON_STORAGE_ID;
-      this.mealsID = JSON_MEALS_ID;
-      this.key = JSON_API_KEY;
+      this.id = env.JSON_STORAGE_ID;
+      this.mealsID = env.JSON_MEALS_ID;
+      this.key = env.JSON_API_KEY;
       this.mealsURL = this.baseURL + '/' + this.id + '/' + this.mealsID + '?apiKey=' + this.key;
-      this.loID = JSON_LEFTOVERS_ID;
+      this.loID = env.JSON_LEFTOVERS_ID;
       this.loURL = this.baseURL + '/' + this.id + '/' + this.loID + '?apiKey=' + this.key;
    }
    
